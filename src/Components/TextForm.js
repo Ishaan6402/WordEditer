@@ -56,15 +56,21 @@ export default function TextForm(props) {
     }
 
     const handleSpaces = () => {
-        var temptext = text.split(' ');
-        var ttext = '';
-        temptext.forEach((textObj) => {
-            if (textObj !== '') {
-                ttext += textObj + ' ';
-            }
-        });
-        setText(ttext);
-        props.showAlert("Extra Spaces Removed", "success");
+        if (text !== '') {
+            var temptext = text.split(' ');
+            var ttext = '';
+            temptext.forEach((textObj) => {
+                if (textObj !== '') {
+                    ttext += textObj + ' ';
+                }
+            });
+            setText(ttext);
+            props.showAlert("Extra Spaces Removed", "success");
+        }
+        else {
+            props.showAlert("Enter Some Text First !!!", "danger");
+        }
+
     }
 
     const handleEmail = () => {
@@ -77,12 +83,12 @@ export default function TextForm(props) {
         <>
             <div className="container">
                 <div className="heading-container" style={{ display: "flex", justifyContent: "center" }}>
-                    <h1 style={{ color: props.mode === 'dark' ? 'white' : 'black'}}>{props.heading.toUpperCase()}</h1>
+                    <h1 style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>{props.heading.toUpperCase()}</h1>
                 </div>
                 <div className="mb-3 my-3">
                     <textarea className="form-control" value={text} onChange={(e) => { setText(e.target.value) }} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="8">{text}</textarea>
                 </div>
-                <div className="button-container" style={{ display: "flex", justifyContent: "center",flexWrap:"wrap"}}>
+                <div className="button-container" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
                     <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert To UpperCase</button>
                     <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert To LowerCase</button>
                     <button className="btn btn-primary mx-2 my-1" onClick={speak}>Speak</button>
