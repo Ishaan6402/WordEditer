@@ -16,7 +16,7 @@ export default function Navbar(props) {
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">{props.aboutText}</Link>
+                            <Link className="nav-link" to="/about">AboutUs</Link>
                         </li>
                     </ul>
                     <label className="form-check-label mx-1" style={props.modeText} htmlFor="defaultCheck1">
@@ -36,11 +36,9 @@ export default function Navbar(props) {
 }
 
 Navbar.propTypes = {
-    title: PropTypes.string,
-    aboutText: PropTypes.string
+    title: PropTypes.string
 }
 
 Navbar.defaultProps = {
-    title: "set Title here",
-    aboutText: "set About Here"
+    title: "set Title here"
 }
