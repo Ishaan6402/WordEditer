@@ -82,14 +82,14 @@ export default function TextForm(props) {
                 <div className="mb-3 my-3">
                     <textarea className="form-control" value={text} onChange={(e) => { setText(e.target.value) }} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="8">{text}</textarea>
                 </div>
-                <div className="button-container" style={{ display: "flex", justifyContent: "center" }}>
-                    <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert To UpperCase</button>
-                    <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert To LowerCase</button>
-                    <button className="btn btn-primary mx-2" onClick={speak}>Speak</button>
-                    <button className="btn btn-info mx-2" onClick={handleCopy}>Copy Text</button>
-                    <button className="btn btn-warning mx-2" onClick={handleSpaces}>Remove Extra Spaces</button>
-                    <button className="btn btn-success mx-2" onClick={handleEmail}>Extract Email</button>
-                    <button className="btn btn-danger mx-2" onClick={handleClear}>Clear</button>
+                <div className="button-container" style={{ display: "flex", justifyContent: "center",flexWrap:"wrap"}}>
+                    <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert To UpperCase</button>
+                    <button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert To LowerCase</button>
+                    <button className="btn btn-primary mx-2 my-1" onClick={speak}>Speak</button>
+                    <button className="btn btn-info mx-2 my-1" onClick={handleCopy}>Copy Text</button>
+                    <button className="btn btn-warning mx-2 my-1" onClick={handleSpaces}>Remove Extra Spaces</button>
+                    <button className="btn btn-success mx-2 my-1" onClick={handleEmail}>Extract Email</button>
+                    <button className="btn btn-danger mx-2 my-1" onClick={handleClear}>Clear</button>
                 </div>
             </div>
             <div className="container">
