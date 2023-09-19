@@ -74,9 +74,14 @@ export default function TextForm(props) {
     }
 
     const handleEmail = () => {
-        let temp = text.match(/[a-zA-z0-9._-]+@+[a-zA-z0-9._-]+.com/g)[0];
-        setText(temp);
-        props.showAlert("Email-ID's Extracted", "success");
+        if (text !== '') {
+            let temp = text.match(/[a-zA-z0-9._-]+@+[a-zA-z0-9._-]+.com/g)[0];
+            setText(temp);
+            props.showAlert("Email-ID's Extracted", "success");
+        }
+        else {
+            props.showAlert("Enter Some Text First !!!", "danger");
+        }
     }
 
     return (
