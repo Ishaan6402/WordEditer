@@ -22,7 +22,7 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 2000);
+    }, 1000);
   }
 
   const toggleMode = () => {
@@ -37,7 +37,7 @@ function App() {
     }
     else {
       setMode('light');
-      document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundColor = '#f7f1e3';
       showAlert("Light Mode Is enabled !!! ", "success");
       document.title = 'TextUtils - Light Mode';
       setModeText({
@@ -50,11 +50,11 @@ function App() {
     <>
       <Router>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} modeText={modeText} />
-        <Alert alert={alert} />
+        <Alert alert={alert} mode={mode}/>
         <Routes>
           <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />}>
           </Route>
-          <Route exact path="/about" element={<About />}>
+          <Route exact path="/about" element={<About mode={mode} />}>
           </Route>
         </Routes>
       </Router>
