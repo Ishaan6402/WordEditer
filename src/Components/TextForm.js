@@ -54,7 +54,6 @@ export default function TextForm(props) {
             props.showAlert("Enter Some Text First !!!", "danger");
         }
     }
-
     const handleSpaces = () => {
         if (text !== '') {
             var temptext = text.split(' ');

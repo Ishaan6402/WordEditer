@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar';
 import About from './Components/About';
 import Alert from './Components/Alert';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 function App() {
@@ -47,16 +47,18 @@ function App() {
   }
 
   return (
-    <Router>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} modeText={modeText} />
-      <Alert alert={alert} />
-      <Routes>
-        <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />}>
-        </Route>
-        <Route exact path="/about" element={<About />}>
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} modeText={modeText} />
+        <Alert alert={alert} />
+        <Routes>
+          <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />}>
+          </Route>
+          <Route exact path="/about" element={<About />}>
+          </Route>
+        </Routes>
+      </Router>
+    </>
   )
 }
 export default App;
